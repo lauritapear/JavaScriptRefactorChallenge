@@ -9,12 +9,17 @@ function ColorGenerator()
   return Math.floor(Math.random() * 256 );
 }
 
+function RandomColorGenerator()
+{
+  var color = 'rgb(';
+  color += ColorGenerator() + ',';
+  color += ColorGenerator() + ',';
+  color += ColorGenerator() + ')';
+  return color;
+}
 for (var i = 0; i< 10; i++)
 {
-  red = ColorGenerator();
-  green = ColorGenerator();
-  blue = ColorGenerator();
-  rgbColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
+  rgbColor = RandomColorGenerator();
   html += '<div style="background-color:' + rgbColor + '"></div>';
 }
 
